@@ -1,10 +1,11 @@
 // Import React
 import React from "react";
 import App from './App';
+import dpl from '../assets/dpl2017.png';
+import LaunchDay from '../assets/LaunchDay.png';
 
 // Import Spectacle Core tags
-import {
-  Appear,
+import { Appear,
   BlockQuote,
   Cite,
   CodePane,
@@ -44,12 +45,14 @@ const images = {
   ruby: require("../assets/ruby.png"),
   redux: require("../assets/redux.png"),
   js: require("../assets/js.png"),
-  city: require("../assets/city.jpg"),
+  reflect: require("../assets/reflect.jpg"),
+  heart: require("../assets/heart.png"),
   logo: require("../assets/formidable-logo.svg"),
   fam: require("../assets/family.jpg"),
   markdown: require("../assets/markdown.png"),
-  bird: require("../assets/bird_fail.gif"),
-  birdVid: require("../assets/Bird_release_fail.mp4")
+  dps: require('../assets/logo-purple.png'),
+  tw: require('../assets/twitter.png'),
+  launch: require('../assets/LaunchDay.png'),
 };
 
 preloader(images);
@@ -64,6 +67,8 @@ export default class Presentation extends React.Component {
     return (
       <Spectacle theme={theme}>
         <Deck transition={["zoom", "slide"]} transitionDuration={500}>
+          <Slide bgImage={LaunchDay}>
+          </Slide>
           <Slide transition={["zoom"]} bgColor="primary">
             <Layout>
               <Fill>
@@ -72,8 +77,10 @@ export default class Presentation extends React.Component {
                 </Heading>
                 <br />
                 <hr style={{ color: 'white' }} />
-                <br />
-                <Heading textColor="secondary">@djungst</Heading>
+                <Fit>
+                  <Image height="100" width="100" src={images.tw.replace("/", "")} />
+                  <Heading textColor="secondary">@djungst</Heading>
+                </Fit>
               </Fill>
               <Fill>
                 <Image height="100" width="100" src={images.rails.replace("/", "")} />
@@ -85,49 +92,98 @@ export default class Presentation extends React.Component {
               </Fill>
             </Layout>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black">
-            <Heading textColor="white">I'm in my late 20's</Heading>
-            <br />
-            <Appear><Text textSize="72px" textColor="secondary">( 36 )</Text></Appear>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="black">
-             <Heading size={1} caps fit textColor="tertiary">
-              5 Lessons Learned
-            </Heading>
+          <Slide transition={["zoom"]} bgColor="black">
+            <Heading textColor="secondary">Numbers</Heading>
             <Appear>
-              <List>
-                <ListItem textAlign="center" textColor="secondary">1.  This never gets old</ListItem>
-              </List>
+              <Heading textColor="white" size={4}>I</Heading>
             </Appear>
             <Appear>
-              <List>
-                <ListItem textAlign="center" textColor="secondary">{`2.  while (true) { learn(); }`}</ListItem>
-              </List>
+              <Heading size={4} textColor="white">11</Heading>
             </Appear>
             <Appear>
-              <List>
-                <ListItem textAlign="center" textColor="secondary">3.  Peaks and valleys</ListItem>
-              </List>
+              <Heading size={4} textColor="white">22</Heading>
             </Appear>
             <Appear>
-              <List>
-                <ListItem textAlign="center" textColor="secondary">4.  Abstraction is everywhere</ListItem>
-              </List>
+              <Heading size={4} textColor="white">3.5</Heading>
             </Appear>
             <Appear>
-              <List>
-                <ListItem textAlign="center" textColor="secondary">5.  Mentors and relationships</ListItem>
-              </List>
+              <Heading size={4} textColor="white">350</Heading>
+            </Appear>
+            <Appear>
+              <Heading size={4} textColor="white">01100011 01101111 01101111 01101100 0001010</Heading>
+            </Appear>
+            <Appear>
+              <Heading size={4} textColor="white">0X01</Heading>
             </Appear>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black">
-            <App />
+          <Slide transition={["slide"]} bgColor="primary">
+            <Heading textColor="secondary">Worth It?</Heading>
+            <iframe height={600} width={800} src="https://tycards.herokuapp.com/"></iframe>
+          </Slide>
+          <Slide transition={["slide"]} bgColor="primary">
+            <Heading textColor="secondary">Lessons</Heading>
+            <Appear>
+              <Heading textColor="white" size={4}>{`while(ture) { learn + grow }`}</Heading>
+            </Appear>
+            <Appear>
+              <Heading textColor="white" size={4}>!need = knowEverything</Heading>
+            </Appear>
+            <Appear>
+              <Heading textColor="white" size={4}>Abstraction = Powerful</Heading>
+            </Appear>
+            <Appear>
+              <Heading textColor="white" size={4}>canDoThis = 'Everyone'</Heading>
+            </Appear>
+          </Slide>
+          <Slide transition={["slide"]} bgColor="primary">
+            <Heading textColor="secondary">Todo List</Heading>
+            <Appear>
+              <Heading textColor="white" size={4}>Keep Going</Heading>
+            </Appear>
+            <Appear>
+              <Heading textColor="white" size={4}>Find Mentors</Heading>
+            </Appear>
+            <Appear>
+              <Heading textColor="white" size={4}>❤️  Errors</Heading>
+            </Appear>
+            <Appear>
+              <Heading textColor="white" size={4}>Embrace Abstraction</Heading>
+            </Appear>
+            <Appear>
+              <Heading textColor="white" size={4}>Teach</Heading>
+            </Appear>
+          </Slide>
+          <Slide transition={["slide"]} bgColor="white">
+            <Image src={images.reflect.replace("/", "")} />
+          </Slide>
+          <Slide transition={["zoom"]} bgColor="black">
+            <Layout> 
+              <Fill>
+                <BlockQuote>
+                  <Quote textColor="tertiary">
+                    A story has no beginning or end: arbitrarily one chooses that moment of experience from which to look back or from which to look ahead.
+                  </Quote>
+                  <Cite>Graham Greene</Cite>
+                </BlockQuote>
+              </Fill>
+            </Layout>
           </Slide>
           <Slide transition={["slide"]} bgColor="black">
-            <video autoPlay loop src={images.birdVid} style={{ height: '400' }}/>
-          </Slide>
-        </Deck>
-      </Spectacle>
-    );
-  }
-}
+              <Heading size={2} textColor="white">
+                {`{...❤️ }`}
+              </Heading>
+              <br />
+              <Heading size={2} caps textColor="tertiary">
+                Thank You Fall 2018 
+              </Heading>
+            <Appear>
+              <Heading size={2} caps textColor="white">Thank you DPL</Heading>
+            </Appear>
+            </Slide>
+            <Slide bgImage={LaunchDay}>
+            </Slide>
+          </Deck>
+        </Spectacle>
+      );
+    }
+    }
