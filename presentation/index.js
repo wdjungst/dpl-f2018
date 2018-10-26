@@ -177,7 +177,7 @@ export default class Presentation extends React.Component {
                 Thank You Fall 2018 
               </Heading>
               <Heading size={2} caps textColor="white">Thank you DPL</Heading>
-              <Heading size={2} caps textColor="white">rethink-everything.surge.sh</Heading>
+              <Heading size={2} textColor="tertiary" >rethink-everything.surge.sh</Heading>
             </Slide>
             <Slide bgImage={LaunchDay}>
             </Slide>
